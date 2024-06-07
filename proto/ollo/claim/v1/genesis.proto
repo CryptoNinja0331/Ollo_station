@@ -1,0 +1,34 @@
+syntax = "proto3";
+package ollo.claim.v1;
+
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "ollo/claim/v1/params.proto";
+import "ollo/claim/v1/claim.proto";
+import "ollo/claim/v1/goal.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/claim/types";
+
+// GenesisState defines the claim module's genesis state.
+message GenesisState {
+  cosmos.base.v1beta1.Coin airdrop_supply = 1 [ 
+    (gogoproto.moretags) = "yaml:\"airdrop_supply\"",
+    (gogoproto.nullable) = false 
+    ];
+  repeated ollo.claim.v1.ClaimRecord claim_records = 2 [
+    (gogoproto.moretags) = "yaml:\"claim_records\"",
+    (gogoproto.nullable) = false 
+  ];
+  repeated ollo.claim.v1.Goal goals = 3 [
+    (gogoproto.moretags) = "yaml:\"goals\"",
+    (gogoproto.nullable) = false 
+    ];
+  ollo.claim.v1.InitialClaim initial_claim = 4 [ 
+    (gogoproto.moretags) = "yaml:\"initial_claim\"",
+    (gogoproto.nullable) = false 
+    ];
+  ollo.claim.v1.Params params = 5 [
+    (gogoproto.moretags) = "yaml:\"params\"",
+    (gogoproto.nullable) = false 
+    ];
+}

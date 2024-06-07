@@ -1,0 +1,30 @@
+syntax = "proto3";
+package ollo.market.v1;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/duration.proto";
+import "ollo/market/v1/distribution.proto";
+import "cosmos_proto/cosmos.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/market/types";
+
+// Params defines the parameters for the module.
+message Params { 
+
+    string commission = 1 [
+        (gogoproto.moretags)   = "yaml:\"commission\"",
+        (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+        (gogoproto.nullable)   = false
+    ];
+
+    google.protobuf.Duration bid_close_duration = 2 [
+        (gogoproto.nullable) = false,
+        (gogoproto.stdduration) = true,
+        (gogoproto.moretags) = "yaml:\"bid_close_duration\""
+    ];
+
+    ollo.market.v1.Distribution distribution = 3 [
+        (gogoproto.nullable) = false,
+        (gogoproto.moretags) = "yaml:\"distribution\""
+    ];
+}

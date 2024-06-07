@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ollo.vault.v1;
+
+option go_package = "github.com/ollo-station/ollo/x/vault/types";
+
+// Msg defines the Msg service.
+service Msg {}

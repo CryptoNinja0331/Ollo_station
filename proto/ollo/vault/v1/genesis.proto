@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ollo.vault.v1;
+
+import "gogoproto/gogo.proto";
+import "ollo/vault/v1/params.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/vault/types";
+
+// GenesisState defines the vault module's genesis state.
+message GenesisState {
+  ollo.vault.v1.Params params = 1 [(gogoproto.nullable) = false];
+}

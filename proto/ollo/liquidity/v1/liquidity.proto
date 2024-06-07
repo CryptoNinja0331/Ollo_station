@@ -1,0 +1,85 @@
+syntax = "proto3";
+package ollo.liquidity.v1;
+
+import "gogoproto/gogo.proto";
+import "cosmos_proto/cosmos.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+import "ollo/liquidity/v1/order.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/liquidity/types";
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.equal_all) = true;
+option (gogoproto.verbose_equal_all) = true;
+
+// DepositRequest defines a deposit request.
+message DepositRequest {
+    // id specifies the id for the request
+    uint64 id = 1 [
+        (gogoproto.moretags) = "yaml:\"id\""
+    ];
+
+    // pool_id specifies the pool id
+    uint64 pool_id = 2 [
+        (gogoproto.moretags) = "yaml:\"pool_id\""
+    ];
+
+    // msg_height specifies the block height when the request is stored for the batch execution
+    int64 msg_height = 3 [
+        (gogoproto.moretags) = "yaml:\"msg_height\""
+    ];
+
+    // depositor specifies the bech32-encoded address that makes a deposit to the pool
+    string depositor = 4 [
+        (cosmos_proto.scalar) = "cosmos.Address",
+        (gogoproto.moretags) = "yaml:\"depositor\""
+    ];
+
+    // deposit_coins specifies the amount of coins to deposit.
+    repeated cosmos.base.v1beta1.Coin deposit_coins = 5
+        [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+
+    // accepted_coins specifies the amount of coins that are accepted.
+    repeated cosmos.base.v1beta1.Coin accepted_coins = 6
+        [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+
+    cosmos.base.v1beta1.Coin minted_pool_coin = 7 [
+        (gogoproto.moretags) = "yaml:\"minted_pool_coin\"",
+        (gogoproto.nullable) = false
+    ];
+
+    RequestStatus status = 8 [
+        (gogoproto.moretags) = "yaml:\"status\"",
+        (gogoproto.jsontag) = "status,omitempty"
+    ];
+}
+
+
+// WithdrawRequest defines a withdraw request.
+message WithdrawRequest {
+    // id specifies the id for the request
+    uint64 id = 1;
+
+    // pool_id specifies the pool id
+    uint64 pool_id = 2;
+
+    // msg_height specifies the block height when the request is stored for the batch execution
+    int64 msg_height = 3;
+
+    // withdrawer specifies the bech32-encoded address that withdraws pool coin from the pool
+    string withdrawer = 4 [
+        (cosmos_proto.scalar) = "cosmos.Address",
+        (gogoproto.moretags) = "yaml:\"withdrawer\""
+    ];
+
+    // pool_coin specifies the pool coin that is a proof of liquidity provider for the pool
+    cosmos.base.v1beta1.Coin pool_coin = 5 [(gogoproto.nullable) = false];
+
+    // withdrawn_coins specifies the amount of coins that are withdrawn.
+    repeated cosmos.base.v1beta1.Coin withdrawn_coins = 6
+        [(gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins", (gogoproto.nullable) = false];
+
+    RequestStatus status = 7;
+}
+

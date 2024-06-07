@@ -1,0 +1,9 @@
+[submodule "ollojs"]
+  path = ollojs
+  url = https://github.com/ollo-station/ollojs.git
+[submodule "networks"]
+  path = networks
+  url = https://github.com/OllO-Station/networks.git
+[submodule "cw-ollo"]
+  path = contracts
+  url = https://github.com/ollo-station/cw-ollo.git

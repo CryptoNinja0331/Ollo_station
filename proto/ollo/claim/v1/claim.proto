@@ -1,0 +1,135 @@
+syntax = "proto3";
+package ollo.claim.v1;
+
+import "gogoproto/gogo.proto";
+import "cosmos_proto/cosmos.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/claim/types";
+
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_enum_prefix_all) = false;
+option (gogoproto.equal_all) = true;
+option (gogoproto.verbose_equal_all) = true;
+
+//
+enum ClaimAction {
+  option (gogoproto.goproto_enum_prefix) = false;
+  /* option (gogo.proto.goproto_enum_stringer) = false; */
+
+
+  //
+  ClaimActionUnspecified = 0 [
+    (gogoproto.enumvalue_customname) = "ClaimActionUnspecified"
+  ];
+
+  //
+  ClaimActionInitialClaim = 1 [
+    (gogoproto.enumvalue_customname) = "ClaimActionInitialClaim"
+  ];
+
+  //
+  ClaimActionStake = 2 [
+    (gogoproto.enumvalue_customname) = "ClaimActionStake"
+  ];
+
+  //
+  ClaimActionCastVote = 3 [
+    (gogoproto.enumvalue_customname) = "ClaimActionCastVote"
+  ];
+
+  //
+  ClaimActionDepositLiquidity = 4 [
+    (gogoproto.enumvalue_customname) = "ClaimActionDepositLiquidity"
+  ];
+
+  //
+  ClaimActionLockLiquidity = 5 [
+    (gogoproto.enumvalue_customname) = "ClaimActionLockLiquidity"
+  ];
+
+  //
+  ClaimActionMintNft = 6 [
+    (gogoproto.enumvalue_customname) = "ClaimActionMintNft"
+  ];
+
+  //
+  ClaimActionAuctionNft = 7 [
+    (gogoproto.enumvalue_customname) = "ClaimActionAuctionNft"
+  ];
+
+  //
+  ClaimActionDepositExternalAsset = 8 [
+    (gogoproto.enumvalue_customname) = "ClaimActionDepositExternalAsset"
+  ];
+
+  // 
+  ClaimActionSwap = 9 [
+    (gogoproto.enumvalue_customname) = "ClaimActionSwap"
+  ];
+
+  //
+  ClaimActionBorrow = 10 [
+    (gogoproto.enumvalue_customname) = "ClaimActionBorrow"
+  ];
+
+}
+
+//
+enum ClaimStatus {
+  option (gogoproto.goproto_enum_prefix) = false;
+
+  //
+  ClaimStatusUnspecified = 0 [
+    (gogoproto.enumvalue_customname) = "ClaimStatusUnspecified"
+  ];
+
+  //
+  ClaimStatusPending = 1 [
+    (gogoproto.enumvalue_customname) = "ClaimStatusPending"
+  ];
+
+  //
+  ClaimStatusClaimed = 2 [
+    (gogoproto.enumvalue_customname) = "ClaimStatusClaimed"
+  ];
+
+  //
+  ClaimStatusActive = 3 [
+    (gogoproto.enumvalue_customname) = "ClaimStatusActive"
+  ];
+
+  //
+  ClaimStatusExpired = 4 [
+    (gogoproto.enumvalue_customname) = "ClaimStatusFailed"
+  ];
+}
+
+//
+message InitialClaim {
+  bool enabled = 1 [
+    (gogoproto.moretags) = "yaml:\"enabled\""
+  ];
+  uint64 goal_id = 2 [
+    (gogoproto.moretags) = "yaml:\"goal_id\""
+  ];
+}
+
+//
+message ClaimRecord {
+  string address = 1 [ 
+    (cosmos_proto.scalar) = "cosmos.AddressString",
+    (gogoproto.moretags) = "yaml:\"address\""
+  ];
+  string claimable = 2 [
+    (gogoproto.nullable) = false,
+    (gogoproto.moretags) = "yaml:\"claimable\"",
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int",
+    (cosmos_proto.scalar) = "cosmos.Int"
+  ];
+  repeated uint64 completed_goals = 3 [
+    (gogoproto.moretags) = "yaml:\"completed_goals\""
+  ];
+  repeated uint64 claimed_goals = 4 [
+    (gogoproto.moretags) = "yaml:\"claimed_goals\""
+  ];
+}

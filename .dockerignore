@@ -1,0 +1,12 @@
+**vue/
+**dart/
+**flutter/
+**ui/
+**ts-client/
+**node_modules/
+cmd/ollod/ollod
+release/
+.idea/
+.vscode/
+.DS_Store
+build/

@@ -1,0 +1,156 @@
+version: 1
+genesis:
+  chain_id: "ollo-local"
+  bank:
+    send_enabled: true
+  app_state:
+    crisis:
+      constant_fee:
+        denom: "uollo"
+        amount: "1000"
+    mint:
+      params:
+        mint_denom: "uollo"
+    staking:
+      params:
+        bond_denom: "uollo"
+    gov:
+      deposit_params:
+        max_deposit_period: "300s"
+        min_deposit:
+          - amount: "1"
+            denom: "uollo"
+      voting_params:
+        voting_period: "20s"
+    evm:
+      params:
+        evm_denom: "uollo"
+    liquidity:
+      params:
+        pair_creation_fee:
+          - amount: "100000"
+            denom: "uollo"
+        pool_creation_fee:
+          - amount: "100000"
+            denom: "uollo"
+    market:
+      next_auction_number: "1"
+      params:
+        commission: "0.5"
+        bid_close_duration: "604800s"
+        distribution:
+          staking: "0.5"
+          community_pool: "0.5"
+    incentive:
+      params:
+        incentive_pairs:
+          - pair_id: 1
+            update_time: "2022-09-10T00:00:00Z"
+            incentive_weight: "0.00000000"
+            max_spread: "0"
+            min_spread: "0"
+            min_depth: "0"
+          - pair_id: 2
+            update_time: "2022-09-10T00:00:00Z"
+            incentive_weight: "0.00000000"
+            max_spread: "0"
+            min_spread: "0"
+            min_depth: "0"
+client:
+  typescript:
+    path: "ts-client"
+  composables:
+    path: "vue/src/composables"
+  vuex:
+    path: "vue/src/store"
+  hooks:
+    path: "react/src/hooks"
+  openapi:
+    path: docs/static/openapi.yml
+faucet:
+  name: bob
+  host: 0.0.0.0:4500
+  coins:
+    - 10000000uollo
+    - 10000000uwise
+validators:
+  - name: alice
+    bonded: 100000000uollo
+    client:
+      chain_id: ollo-local
+    app:
+      minimum-gas-prices: 1uollo
+      api:
+        swagger: "true"
+  - name: bob
+    bonded: 100000000uollo
+    client:
+      chain_id: ollo-local
+    app:
+      minimum-gas-prices: 1uollo
+      api:
+        swagger: "true"
+    # home: "~/.ollo/n1"
+    # config:
+    # moniker: "alice"
+    # app:
+    # pruning: "default"
+    # client:
+    # output: "json"
+    # - name: bob
+    #   bonded: 100000000uollo
+    #   home: "~/.ollo/n2"
+    #   app:
+    #     pruning: "default"
+    #   config:
+    #     moniker: "bob"
+    #   client:
+    #     output: "json"
+init:
+  home: "~/.ollo"
+  client:
+    output: json
+  config:
+    consensus:
+      timeout_commit: 5s
+      timeout_proprose: 5s
+  app:
+    pruning: default
+    minimum-gas-prices: "1uollo"
+    evm-rpc:
+      address: "0.0.0.0:8545"
+      ws-address: "0.0.0.0:8546"
+build:
+  binary: "ollod"
+  main: "cmd/ollod"
+  ldflags:
+    - "-X main.Version=0.0.2-dev"
+    - "-X main.Date=03/05/2023T19:54"
+  proto:
+    path: "proto"
+    third_party_paths:
+      - "third_party/proto"
+      - "proto_vendor"
+accounts:
+  - name: alice # ollo1zaavvzxez0elundtn32qnk9lkm8kmcszxclz6p
+    coins:
+      - 1500000000000uollo
+      - 1000000000000000uwise
+      - 1000000000000000uusdo
+    mnemonic: guard cream sadness conduct invite crumble clock pudding hole grit liar hotel maid produce squeeze return argue turtle know drive eight casino maze host
+  - name: bob # ollo1mzgucqnfr2l8cj5apvdpllhzt4zeuh2c5l33n3
+    coins:
+      - 1000000000000uollo
+      - 1000000000000000uwise
+      - 1000000000000000uusdo
+    mnemonic: friend excite rough reopen cover wheel spoon convince island path clean monkey play snow number walnut pull lock shoot hurry dream divide concert discover
+  - name: steve # ollo185fflsvwrz0cx46w6qada7mdy92m6kx4vg42xf
+    coins:
+      - 1000000000000uollo
+      - 1000000000000000uwise
+      - 1000000000000000uusdo
+    mnemonic: fuel obscure melt april direct second usual hair leave hobby beef bacon solid drum used law mercy worry fat super must ritual bring faculty
+  - name: source # ollo15rz2rwnlgr7nf6eauz52usezffwrxc0mxajpmw
+    coins:
+      - 15000000000000uollo
+    mnemonic: diary behind allow lawn loop assault armor survey media toe rural mass skull way crater tobacco pair glare window soon lift pistol fitness annual

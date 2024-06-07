@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ollo.icq.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/ollo-station/ollo/x/icq/types";
+
+message Params {
+  bool host_enabled = 1 [
+    (gogoproto.moretags) = "yaml:\"host_enabled\""
+  ];
+
+  repeated string allow_queries = 2 [
+    (gogoproto.moretags) = "yaml:\"allow_queries\""
+  ];
+}

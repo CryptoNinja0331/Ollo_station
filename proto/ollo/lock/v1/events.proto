@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ollo.lock.v1;
+option go_package = "github.com/ollo-station/ollo/x/lock/types";
+
+message EventCreateLock {
+    string id = 1;
+}
