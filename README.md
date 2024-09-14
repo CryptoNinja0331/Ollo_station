@@ -11,10 +11,6 @@ parent:
 
 <h3 align="center">Welcome aboard the <a href="https://ollostation.zone">OLLO Station</a>, cosmonaut.</h3>
 
-<p align="center">
-Learn more about <a href="https://ollostation.zone">the project</a>, explore <a href="https://explorer.ollo.zone">the testnet</a>, or visit <a href="https://docs.ollo.zone">the docs</a>.
-</p>
-
 <br/>
 
 <br/>
