@@ -93,35 +93,9 @@ make install
 
 <!-- <br> -->
 
-## Links 🌐
-
-- [OLLO Station Website](https://ollostation.zone)
-- [OLLO Station Testnet Explorer](https://explorer.ollo.zone)
-- [OLLO Station Testnet Frontend](https://testnet.ollo.zone)
-- [OLLO Station Documentation](https://docs.ollo.zone)
-- [OLLO Station Medium Publication](https://medium.com/@OllOStation)
-- [OLLO Station Testnet Repository](https://github.com/OLLO-Station/networks)
-- [OLLO Station Repository Wiki](https://github.com/OLLO-Station/ollo/wiki)
-- [OLLO Station Repository Discussions](https://github.com/OLLO-Station/ollo/discussions)
-- [OLLO Station Discord](https://discord.gg/euGcGgdq7M)
-- [Station8 Validators](https://station8.zone)
-
-<br/>
-
 <div align="center">
 <img src="./assets/logolblue.png" height="50" align="center"/>
 </div>
-
-## Get in Touch 💬
-
-You can get ahold of the team through several channels:
-
-- Reach out to us on our [Twitter](https://twitter.com/ollostation)
-- Visit our [Discord](https://discord.gg/euGcGgdq7M)
-- Send us an [email](hi@station8.zone)
-- **We're hiring!** Get in touch with our team through [email](jobs@station8.zone) or through our Discord if you're interested!
-
-We'd love to hear from you!
 
 > **NOTE**: For security-related issues, please read over the [SECURITY.md](https://github.com/ollo-station/ollo/tree/master/SECURITY.md) file and contact us directly.
 
