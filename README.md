@@ -17,30 +17,6 @@ Learn more about <a href="https://ollostation.zone">the project</a>, explore <a 
 
 <br/>
 
-<div align="center">
-
-[![Project Status: Active -- The project has reached a stable, usable
-state and is being actively
-developed.](https://img.shields.io/badge/repo%20status-Active-green.svg?style=flat-square)](https://www.repostatus.org/#active)
-[![License](https://img.shields.io/github/license/ollo-station/ollo.svg?style=flat-square)](https://github.com/OLLO-Station/ollo)
-[![Version](https://img.shields.io/github/tag/OllO-Station/ollo.svg?style=flat-square)](https://github.com/OllO-Station/ollo/releases/latest)
-[![Last Commit](https://img.shields.io/github/last-commit/ollo-station/ollo.svg?style=flat-square)](https://github.com/OLLO-Station/ollo)
-
-[![Go version](https://img.shields.io/badge/go-1.19-blue.svg)](https://github.com/moovweb/gvm)
-[![Go doc](https://img.shields.io/badge/godoc-reference-blue?style=flat-square&logo=go)](https://pkg.go.dev/github.com/OllO-Station/ollo/v11)
-[![Go Report
-Card](https://goreportcard.com/badge/github.com/OLLO-Station/ollo?style=flat-square)](https://goreportcard.com/report/github.com/OllO-Station/ollo/v11)
-
-[![Stars](https://img.shields.io/github/stars/ollo-station/ollo.svg?style=flat-square)](https://github.com/OLLO-Station/ollo/stargazers)
-[![Forks](https://img.shields.io/github/forks/ollo-station/ollo.svg?style=flat-square)](https://github.com/OLLO-Station/ollo)
-[![Watchers](https://img.shields.io/github/watchers/ollo-station/ollo.svg?style=flat-square)](https://github.com/OLLO-Station/ollo/watchers)
-[![lines](https://tokei.rs/b1/github/ollo-station/ollo?category=lines)](https://github.com/ollo-station/ollo)
-
-[![Build](https://github.com/ollo-station/ollo/actions/workflows/build.yml/badge.svg)](https://github.com/ollo-station/ollo/actions/workflows/build.yml)
-[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/euGcGgdq7M)
-[![Twitter](https://img.shields.io/twitter/follow/ollostation.svg?label=@OLLOStation)](https://twitter.com/intent/follow?screen_name=OLLOStation)
-
-</div>
 <br/>
 <div align="center">
 <img src="./assets/logolblue.png" height="50" align="center"/>
